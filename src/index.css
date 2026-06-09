@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #f8fafc;
+  color: #0f172a;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .status-btn {
+    @apply px-3 py-1.5 rounded-md text-xs font-medium border transition-all duration-150 cursor-pointer select-none;
+  }
+
+  .status-btn-not_evaluated {
+    @apply border-slate-200 text-slate-500 bg-white hover:border-slate-400 hover:text-slate-700;
+  }
+  .status-btn-not_evaluated.active {
+    @apply border-slate-400 bg-slate-100 text-slate-700;
+  }
+
+  .status-btn-not_meets {
+    @apply border-red-200 text-red-500 bg-white hover:border-red-400 hover:text-red-700;
+  }
+  .status-btn-not_meets.active {
+    @apply border-red-400 bg-red-50 text-red-700;
+  }
+
+  .status-btn-partially_meets {
+    @apply border-amber-200 text-amber-600 bg-white hover:border-amber-400 hover:text-amber-700;
+  }
+  .status-btn-partially_meets.active {
+    @apply border-amber-400 bg-amber-50 text-amber-700;
+  }
+
+  .status-btn-fully_meets {
+    @apply border-emerald-200 text-emerald-600 bg-white hover:border-emerald-400 hover:text-emerald-700;
+  }
+  .status-btn-fully_meets.active {
+    @apply border-emerald-400 bg-emerald-50 text-emerald-700;
+  }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
